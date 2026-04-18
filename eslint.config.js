@@ -1,4 +1,5 @@
 const js = require("@eslint/js");
+const globals = require("globals");
 
 module.exports = [
   js.configs.recommended,
@@ -11,6 +12,7 @@ module.exports = [
         process: "readonly",
         module: "readonly",
         require: "readonly",
+        ...globals.jest,
         __dirname: "readonly"
       }
     },
@@ -18,4 +20,5 @@ module.exports = [
       "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
     }
   }
+  
 ];
